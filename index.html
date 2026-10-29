@@ -589,20 +589,27 @@
         </div>
       </div>
 
-      <form id="cform" class="form" novalidate>
-        <label for="cname">Name</label>
-        <input id="cname" name="name" type="text" autocomplete="name" required>
-        <label for="cmail">Your email</label>
-        <input id="cmail" name="email" type="email" autocomplete="email" required>
-        <label for="cmsg">Message</label>
-        <textarea id="cmsg" name="message" rows="5" required></textarea>
-        <p class="err" id="cerr" role="alert" hidden>Please fill in every field with a valid email.</p>
-        <button class="btn p" type="submit">Send message</button>
-        <p class="hint">This opens your email app with the message ready to send.</p>
-      </form>
-    </div>
-  </div>
-</section>
+<form id="cform" class="form" action="https://api.web3forms.com/submit" method="POST">
+
+  <!-- Replace with your actual Web3Forms access key -->
+  <input type="hidden" name="access_key" value="cacd8bc3-888a-4d5b-8c1a-88705e2f821c">
+
+  <input type="hidden" name="subject" value="New Portfolio Contact Message">
+
+  <label for="cname">Name</label>
+  <input id="cname" name="name" type="text" autocomplete="name" required>
+
+  <label for="cmail">trishapaul2502@gmail.com</label>
+  <input id="cmail" name="email" type="email" autocomplete="email" required>
+
+  <label for="cmsg">Message</label>
+  <textarea id="cmsg" name="message" rows="5" required></textarea>
+
+  <button class="btn p" type="submit">Send message</button>
+
+  <p class="hint">Your message will be sent through the contact form.</p>
+</form>
+
 
 </main>
 
