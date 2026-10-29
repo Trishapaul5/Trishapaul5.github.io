@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects · Trisha Paul</title>
+<meta name="description" content="Machine learning, AI, exploratory analysis and dashboard projects by Trisha Paul, with links to the code on GitHub.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('tp-theme'); } catch (e) {}
+    if (!t) { t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="index.html">Trisha<span>.</span></a>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links" id="menu" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button id="theme" class="themebtn" type="button" aria-label="Switch colour theme">Dark mode</button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="pagehead">
+    <p class="kicker">Portfolio</p>
+    <h1>All <em>projects</em></h1>
+    <p>Machine learning, AI, time series, exploratory analysis and dashboards. Each card links to the code on GitHub.</p>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filter projects">
+    <button class="fbtn on" type="button" data-filter="all">All</button>
+    <button class="fbtn" type="button" data-filter="ml">Machine learning</button>
+    <button class="fbtn" type="button" data-filter="ai">AI / GenAI</button>
+    <button class="fbtn" type="button" data-filter="eda">Exploratory analysis</button>
+    <button class="fbtn" type="button" data-filter="dash">Dashboards</button>
+  </div>
+
+  <div class="grid" id="plist">
+
+    <article class="card" data-cat="ml">
+      <span class="ico" aria-hidden="true">🏦</span>
+      <h3>Credit risk classification</h3>
+      <p>Multiclass XGBoost model that sorts loan applicants into 4 risk tiers (P1 lowest risk to P4 highest). Uses statistical feature selection (Chi-square, ANOVA, VIF) to cut 88 features to 53, weighted sampling for class imbalance, saved model files and a Streamlit dashboard for single and batch predictions.</p>
+      <div class="tags"><span class="tag">XGBoost</span><span class="tag">Streamlit</span><span class="tag">Feature selection</span></div>
+      <a class="go" href="https://github.com/Trishapaul5/CREDIT-ML-CLASSIFICATION-PROJECT-" target="_blank" rel="noopener">View on GitHub →</a>
+    </article>
+
+    <article class="card" data-cat="ml">
+      <span class="ico" aria-hidden="true">📈</span>
+      <h3>Stock price forecasting</h3>
+      <p>ARIMA pipeline for Indian equity data. STL decomposition and ADF/KPSS tests prepare the series, then grid search and backtesting on 1,300+ days are scored with MAE, RMSE and MAPE.</p>
+      <div class="tags"><span class="tag">ARIMA</span><span class="tag">Time series</span><span class="tag">Backtesting</span></div>
+      <a class="go" href="https://github.com/Trishapaul5/stock-price-forecasting-arima" target="_blank" rel="noopener">View on GitHub →</a>
+    </article>
+
+    <article class="card" data-cat="ml">
+      <span class="ico" aria-hidden="true">🍷</span>
+      <h3>Wine quality predictor</h3>
+      <p>A Random Forest classifier that predicts wine quality, with a Gradio interface for trying out inputs.</p>
+      <div class="tags"><span class="tag">Random Forest</span><span class="tag">Gradio</span><span class="tag">Python</span></div>
+      <a class="go" href="https://github.com/Trishapaul5/wine_quality_predictor" target="_blank" rel="noopener">View on GitHub →</a>
+    </article>
+
+    <article class="card" data-cat="ai">
+      <span class="ico" aria-hidden="true">📰</span>
+      <h3>Financial news RAG analyzer</h3>
+      <p>A fully local retrieval-augmented generation system for financial news. A data pipeline scrapes Indian news outlets into a ChromaDB vector store. A FastAPI backend retrieves context and queries a local model through Ollama, and a Streamlit front end shows answers with cited sources. Services are containerised with Docker Compose.</p>
+      <div class="tags"><span class="tag">RAG</span><span class="tag">FastAPI</span><span class="tag">ChromaDB</span><span class="tag">Ollama</span><span class="tag">Docker</span></div>
+      <a class="go" href="https://github.com/Trishapaul5/financial-rag-analyzer" target="_blank" rel="noopener">View on GitHub →</a>
+    </article>
+
+    <article class="card" data-cat="eda">
+      <span class="ico" aria-hidden="true">🛣️</span>
+      <h3>PMGSY rural roads EDA</h3>
+      <p>Exploratory analysis and visualisation of the physical and financial progress of the Pradhan Mantri Gram Sadak Yojana dataset, with written insights.</p>
+      <div class="tags"><span class="tag">EDA</span><span class="tag">Jupyter</span><span class="tag">Visualisation</span></div>
+      <a class="go" href="https://github.com/Trishapaul5/PMGSY-EDA" target="_blank" rel="noopener">View on GitHub →</a>
+    </article>
+
+    <article class="card" data-cat="eda">
+      <span class="ico" aria-hidden="true">🚢</span>
+      <h3>Titanic EDA</h3>
+      <p>Exploratory data analysis on the Titanic dataset, looking at which passenger features relate to survival.</p>
+      <div class="tags"><span class="tag">EDA</span><span class="tag">Jupyter</span><span class="tag">Pandas</span></div>
+      <a class="go" href="https://github.com/Trishapaul5/Titanic-EDA" target="_blank" rel="noopener">View on GitHub →</a>
+    </article>
+
+    <article class="card" data-cat="dash">
+      <span class="ico" aria-hidden="true">📊</span>
+      <h3>Sales dashboard</h3>
+      <p>An Excel sales dashboard with interactive filters and visualisations.</p>
+      <div class="tags"><span class="tag">Excel</span><span class="tag">Dashboard</span></div>
+      <a class="go" href="https://github.com/Trishapaul5/sales-dashboard" target="_blank" rel="noopener">View on GitHub →</a>
+    </article>
+
+    <!-- ADD MORE PROJECTS: copy one card above, change data-cat (ml, ai, eda or dash), the title, text, tags and link -->
+
+  </div>
+
+  <h2 class="cat">More on GitHub</h2>
+  <div class="grid two">
+    <article class="card">
+      <span class="ico" aria-hidden="true">💻</span>
+      <h3>Everything else</h3>
+      <p>My GitHub profile has 25 repositories, including coursework and smaller experiments.</p>
+      <a class="go" href="https://github.com/Trishapaul5?tab=repositories" target="_blank" rel="noopener">Browse all repositories →</a>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="year">2026</span> Trisha Paul · Bengaluru, India</span>
+    <span><a href="index.html">Home</a> · <a href="Trisha_Paul_Resume.pdf" target="_blank" rel="noopener">Resume</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
