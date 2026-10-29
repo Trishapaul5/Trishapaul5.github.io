@@ -373,3 +373,43 @@
   });
 
 })();
+async function handleSubmit(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const button = document.getElementById("sendBtn");
+  const message = document.getElementById("msg");
+
+  message.textContent = "";
+  button.disabled = true;
+  button.textContent = "Sending...";
+
+  try {
+    const response = await fetch(
+      "https://api.web3forms.com/submit",
+      {
+        method: "POST",
+        body: new FormData(form)
+      }
+    );
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      message.textContent = "Message sent successfully!";
+      message.style.color = "green";
+      form.reset();
+    } else {
+      message.textContent =
+        result.message || "Failed to send. Please try again.";
+      message.style.color = "red";
+    }
+  } catch (error) {
+    message.textContent =
+      "Network error. Please check your internet and try again.";
+    message.style.color = "red";
+  } finally {
+    button.disabled = false;
+    button.textContent = "Send message";
+  }
+}

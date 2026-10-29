@@ -587,37 +587,74 @@
           <a class="btn" href="https://github.com/Trishapaul5" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a class="btn" href="tel:+919830918863">+91 98309 18863</a>
         </div>
-      </div>
 
-<form id="cform" class="form" action="https://api.web3forms.com/submit" method="POST">
+<form id="cform" class="form" onsubmit="handleSubmit(event)">
+  <input
+    type="hidden"
+    name="access_key"
+    value="cacd8bc3-888a-4d5b-8c1a-88705e2f821c"
+  >
 
-  <!-- Replace with your actual Web3Forms access key -->
-  <input type="hidden" name="access_key" value="cacd8bc3-888a-4d5b-8c1a-88705e2f821c">
-
-  <input type="hidden" name="subject" value="New Portfolio Contact Message">
+  <input
+    type="hidden"
+    name="subject"
+    value="New Portfolio Contact Message"
+  >
 
   <label for="cname">Name</label>
-  <input id="cname" name="name" type="text" autocomplete="name" required>
+  <input
+    id="cname"
+    name="name"
+    type="text"
+    autocomplete="name"
+    required
+  >
 
-  <label for="cmail">trishapaul2502@gmail.com</label>
-  <input id="cmail" name="email" type="email" autocomplete="email" required>
+  <label for="cmail">Your email</label>
+  <input
+    id="cmail"
+    name="email"
+    type="email"
+    autocomplete="email"
+    required
+  >
 
   <label for="cmsg">Message</label>
-  <textarea id="cmsg" name="message" rows="5" required></textarea>
+  <textarea
+    id="cmsg"
+    name="message"
+    rows="5"
+    required
+  ></textarea>
 
-  <button class="btn p" type="submit">Send message</button>
+  <button id="sendBtn" class="btn p" type="submit">
+    Send message
+  </button>
 
-  <p class="hint">Your message will be sent through the contact form.</p>
+  <p id="msg" role="status" aria-live="polite"></p>
 </form>
 
+      </div><!-- Close contactgrid -->
+    </div><!-- Close wrap -->
+  </section><!-- Close contact section -->
 
 </main>
 
 <footer>
   <div class="wrap foot">
     <span>© <span id="year">2026</span> Trisha Paul · Bengaluru, India</span>
-    <span><a href="projects.html">Projects</a> · <a href="Trisha_Paul_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a> · <a href="#hero">Back to top ↑</a></span>
+    <span>
+      <a href="projects.html">Projects</a> ·
+      <a href="Trisha_Paul_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a> ·
+      <a href="#hero">Back to top ↑</a>
+    </span>
   </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
 </footer>
 
 <script src="script.js"></script>
